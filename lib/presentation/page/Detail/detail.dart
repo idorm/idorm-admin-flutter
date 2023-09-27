@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/component/idormBtn.dart';
+import 'package:idorm_admin_flutter/presentation/component/idormCheckBox.dart';
 import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../component/idormTextField.dart';
@@ -28,6 +29,9 @@ class _DetailState extends State<Detail> {
   WebViewController? _webViewController;
 
   bool _isPublicChecked = false;
+  bool _isDorm1Checked = false;
+  bool _isDorm2Checked = false;
+  bool _isDorm3Checked = false;
 
   @override
   void initState() {
@@ -133,17 +137,45 @@ class _DetailState extends State<Detail> {
   }
 
   Widget _dorms(){
-    return Column(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        IDormCheckBox(isRectangle: true, value: _isDorm1Checked, onChanged: (checked) {
+          setState(() {
+            _isDorm1Checked = checked;
+          });
+        }),
+        SizedBox(width: 5,),
         const Text(
-          "기숙사",
+          "1 기숙사",
           style: TextStyle(
-              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.gray3),
         ),
-        _padding(5),
-        IDormTextField(borderRadius: 10),
+        SizedBox(width: 15,),
+        IDormCheckBox(isRectangle: true, value: _isDorm2Checked, onChanged: (checked) {
+          setState(() {
+            _isDorm2Checked = checked;
+          });
+        }),
+        SizedBox(width: 5,),
+        const Text(
+          "2 기숙사",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.gray3),
+        ),
+        SizedBox(width: 15,),
+        IDormCheckBox(isRectangle: true, value: _isDorm3Checked, onChanged: (checked) {
+          setState(() {
+            _isDorm3Checked = checked;
+          });
+        }),
+        SizedBox(width: 5,),
+        const Text(
+          "3 기숙사",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.gray3),
+        ),
       ],
     );
   }
