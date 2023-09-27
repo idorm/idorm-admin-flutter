@@ -71,7 +71,7 @@ class _IDormCheckBoxState extends State<IDormCheckBox> {
       child: Padding(
           padding: EdgeInsets.all(2),
           child:
-              SvgPicture.asset("assets/box_check.svg", color: IDormColors.primary)),
+              SvgPicture.asset("assets/box_check.svg", color: IDormColors.white)),
     );
   }
 }
