@@ -47,6 +47,8 @@ class _DetailState extends State<Detail> {
                 _title(),
                 _padding(30),
                 _period(),
+                _padding(30),
+                _dorms()
               ]
           ),
         ),
@@ -118,6 +120,22 @@ class _DetailState extends State<Detail> {
             fit: BoxFit.scaleDown,
           ),
         ),),
+      ],
+    );
+  }
+
+  Widget _dorms(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "기숙사",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
+        ),
+        _padding(5),
+        IDormTextField(borderRadius: 10),
       ],
     );
   }
