@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
+import 'package:idorm_admin_flutter/presentation/page/home/home.dart';
 import 'package:logger/logger.dart';
 
 void main() {
@@ -23,14 +24,13 @@ class _State extends State<IDormAdmin> {
       title: 'Spotright',
       routes: {
         '/home': (context) => const Home(),
-        '/splash': (context) => const Splash(),
       },
       theme: ThemeData(
           primarySwatch: IDormColors.materialPrimary,
           canvasColor: IDormColors.white,
           fontFamily: 'Pretendard'
       ),
-      initialRoute: '/splash',
+      initialRoute: '/home',
       initialBinding: BindingsBuilder(() {
 
         Get.put(Logger());
