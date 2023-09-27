@@ -64,5 +64,16 @@ class _DetailState extends State<Detail> {
     );
   }
 
+  Widget _isPublic(bool isPublic){
+    return Row(
+      children: const [
+        Text(
+          "공개여부",
+          style: TextStyle(
+              fontWeight: FontWeight.w700, fontSize: 20, color: IDormColors.gray4),
+        )
+      ],
+    );
+  }
 
 }
