@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ToggleBtn extends StatefulWidget {
-  ToggleBtn({Key? key, required this.isPublicChecked, required this.action}) : super(key: key);
+  ToggleBtn({Key? key, required this.isPublicChecked, required this.action})
+      : super(key: key);
 
   bool isPublicChecked;
   Function() action;
@@ -13,11 +14,14 @@ class ToggleBtn extends StatefulWidget {
 class _ToggleBtnState extends State<ToggleBtn> {
   @override
   Widget build(BuildContext context) {
-    return Switch(value: widget.isPublicChecked,onChanged: (value)  {
-      setState(() {
-        widget.isPublicChecked = value;
-        widget.action();
-      });
-    },);
+    return Switch(
+      value: widget.isPublicChecked,
+      onChanged: (value) {
+        setState(() {
+          widget.isPublicChecked = value;
+          widget.action();
+        });
+      },
+    );
   }
 }
