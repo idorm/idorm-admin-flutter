@@ -40,7 +40,7 @@ class _DetailState extends State<Detail> {
               _padding(30),
               _isPublic(true),
               _padding(30),
-
+              _title(),
             ]
         ),
       ),
@@ -71,6 +71,23 @@ class _DetailState extends State<Detail> {
           "공개여부",
           style: TextStyle(
               fontWeight: FontWeight.w700, fontSize: 20, color: IDormColors.gray4),
+        )
+      ],
+    );
+  }
+
+  Widget _title(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "공개여부",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
+        ),
+        TextField(
+
         )
       ],
     );
