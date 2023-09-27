@@ -34,6 +34,45 @@ class _HomeState extends State<Home> {
     );
   }
 
+  Widget _NoticeList(){
+    return Padding(
+      padding: const EdgeInsets.only(top: 22, bottom: 14, right: 24, left: 24),
+      child: Container(
+        padding: const EdgeInsets.only(top: 24, bottom: 22, right: 22, left: 22),
+        height: 160,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: IDormColors.gray2, width: 1),
+            color: IDormColors.white
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "공지 사항 제목",
+              style: TextStyle(
+                fontWeight: FontWeight.w400, fontSize: 14, color: IDormColors.black),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            const Text(
+              "6월 18일",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400, fontSize: 14, color: IDormColors.black),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 20)),
+            const Text(
+              "일정이 있는 기숙사",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray3),
+            ),
+            _Dorm(true, true, true)
+          ],
+        ),
+      ),
+    );
+  }
+
 
 
 
