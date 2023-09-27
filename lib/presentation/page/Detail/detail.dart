@@ -51,5 +51,18 @@ class _DetailState extends State<Detail> {
     return SizedBox(height: height,);
   }
 
+  Widget _webView(){
+    return SizedBox(
+      height: 300,
+      child: InAppWebView(
+        initialUrlRequest: URLRequest(
+          url: Uri.parse('https://bioeng.inu.ac.kr/dorm/6528/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGZG9ybSUyRjE1MjElMkYzNzI3NTElMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0RzaiUyNnNyY2hXcmQlM0QlMjZiYnNDbFNlcSUzRCUyNmJic09wZW5XcmRTZXElM0QlMjZyZ3NCZ25kZVN0ciUzRCUyNnJnc0VuZGRlU3RyJTNEJTI2aXNWaWV3TWluZSUzRGZhbHNlJTI2cGFzc3dvcmQlM0QlMjY%3D'),
+        ),
+        initialOptions: InAppWebViewGroupOptions(
+            android: AndroidInAppWebViewOptions(useHybridComposition: true)),
+      ),
+    );
+  }
+
 
 }
