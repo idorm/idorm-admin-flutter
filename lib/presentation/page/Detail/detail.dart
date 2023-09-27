@@ -48,7 +48,7 @@ class _DetailState extends State<Detail> {
               children :[
                 _webView(),
                 _padding(30),
-                _isPublic(true),
+                _isPublic(),
                 _padding(30),
                 _title(),
                 _padding(30),
@@ -81,7 +81,7 @@ class _DetailState extends State<Detail> {
     );
   }
 
-  Widget _isPublic(bool isPublic){
+  Widget _isPublic(){
     return Row(
       children: [
         const Text(
