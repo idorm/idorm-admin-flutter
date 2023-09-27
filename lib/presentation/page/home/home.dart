@@ -44,6 +44,24 @@ class _HomeState extends State<Home> {
     );
   }
 
+  Widget _isPublic() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5, left: 5),
+
+      child: Row(
+        children: [
+          const Text(
+            "공개하지 않은 공지만 확인하기",
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: IDormColors.gray4),
+          ),
+          ToggleBtn(isPublicChecked: _isPublicChecked, action: () => {})
+        ],
+      ),
+    );
+  }
 
 
   Widget _noticeList() {
