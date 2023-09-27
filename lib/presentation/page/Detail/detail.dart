@@ -4,10 +4,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
+import 'package:idorm_admin_flutter/presentation/component/idormBtn.dart';
 import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../component/idorm_text_field/idorm_text_field.dart';
+import '../home/home.dart';
 
 
 
@@ -48,7 +50,9 @@ class _DetailState extends State<Detail> {
                 _padding(30),
                 _period(),
                 _padding(30),
-                _dorms()
+                _dorms(),
+                _padding(30),
+                _button(),
               ]
           ),
         ),
@@ -138,6 +142,10 @@ class _DetailState extends State<Detail> {
         IDormTextField(borderRadius: 10),
       ],
     );
+  }
+
+  Widget _button(){
+    return IDormBtn(action: () => Get.to(Home()), mode: Mode.register);
   }
 
 }
