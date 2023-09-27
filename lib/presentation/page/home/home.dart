@@ -73,7 +73,69 @@ class _HomeState extends State<Home> {
     );
   }
 
+  Widget _Dorm(bool dorm1, bool dorm2, bool dorm3){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children : [
+        Padding(
+        padding: const EdgeInsets.only(top: 3,bottom: 3, right: 7),
+        child: Container(
+          width: 60,
+          height: 26,
+          color: IDormColors.gray2,
+          child: Visibility(
+            visible: dorm1,
+            child: const Center(
+              child: Text(
+                "1기숙사",
+                style: TextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray4),
+              ),
+            ),
+          ),
+        ),
+      ),
+        Padding(
+          padding: const EdgeInsets.only(top: 3,bottom: 3, right: 7),
+          child: Container(
+            width: 60,
+            height: 26,
+            color: IDormColors.gray2,
+            child: Visibility(
+              visible: dorm1,
+              child: const Center(
+                child: Text(
+                  "2기숙사",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray4),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 3,bottom: 3, right: 7),
+          child: Container(
+            width: 60,
+            height: 26,
+            color: IDormColors.gray2,
+            child: Visibility(
+              visible: dorm1,
+              child: const Center(
+                child: Text(
+                  "3기숙사",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray4),
+                ),
+              ),
+            ),
+          ),
+        ),
 
+
+      ]
+    );
+  }
 
 
 
