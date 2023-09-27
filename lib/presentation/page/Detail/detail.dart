@@ -8,8 +8,7 @@ import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/component/idormBtn.dart';
 import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-import '../../component/idorm_text_field/idorm_text_field.dart';
+import '../../component/idorm_text_field.dart';
 import '../../component/toggleBtn.dart';
 import '../home/home.dart';
 
