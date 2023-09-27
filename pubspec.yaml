@@ -50,8 +50,8 @@ flutter:
           weight: 700
 
 flutter_native_splash:
-  color: "#FD4F18"
+  color: "#71A1FE"
   image: assets/splash.png
   android_12:
-    icon_background_color: "#FD4F18"
+    icon_background_color: "#71A1FE"
     image: assets/splash122.png
