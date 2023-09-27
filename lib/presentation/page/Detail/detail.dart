@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,6 +10,7 @@ import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dar
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../component/idorm_text_field/idorm_text_field.dart';
+import '../../component/toggleBtn.dart';
 import '../home/home.dart';
 
 
@@ -25,6 +27,8 @@ class _DetailState extends State<Detail> {
 
   DetailController detailController = Get.put(DetailController());
   WebViewController? _webViewController;
+
+  bool _isPublicChecked = false;
 
   @override
   void initState() {
@@ -51,7 +55,7 @@ class _DetailState extends State<Detail> {
                 _period(),
                 _padding(30),
                 _dorms(),
-                _padding(30),
+                _padding(50),
                 _button(),
               ]
           ),
@@ -79,12 +83,13 @@ class _DetailState extends State<Detail> {
 
   Widget _isPublic(bool isPublic){
     return Row(
-      children: const [
-        Text(
+      children: [
+        const Text(
           "공개여부",
           style: TextStyle(
               fontWeight: FontWeight.w700, fontSize: 20, color: IDormColors.gray4),
-        )
+        ),
+        ToggleBtn(isPublicChecked: _isPublicChecked, action: () => {})
       ],
     );
   }
@@ -145,7 +150,7 @@ class _DetailState extends State<Detail> {
   }
 
   Widget _button(){
-    return IDormBtn(action: () => Get.to(Home()), mode: Mode.register);
+    return IDormBtn(action: () => Get.to(Home()), mode: Mode.edit);
   }
 
 }
