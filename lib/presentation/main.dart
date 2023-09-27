@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
+import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dart';
 import 'package:idorm_admin_flutter/presentation/page/home/home.dart';
+import 'package:idorm_admin_flutter/presentation/page/home/home_controller.dart';
 import 'package:logger/logger.dart';
 
 void main() {
@@ -21,7 +23,7 @@ class _State extends State<IDormAdmin> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Spotright',
+      title: 'IDorm',
       routes: {
         '/home': (context) => const Home(),
       },
@@ -34,6 +36,9 @@ class _State extends State<IDormAdmin> {
       initialBinding: BindingsBuilder(() {
 
         Get.put(Logger());
+
+        Get.put(HomeController());
+        Get.put(DetailController());
 
 
       }),
