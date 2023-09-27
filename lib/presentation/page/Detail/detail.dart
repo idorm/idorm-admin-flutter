@@ -6,6 +6,8 @@ import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/page/Detail/detaiController.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../component/idorm_text_field/idorm_text_field.dart';
+
 
 
 class Detail extends StatefulWidget {
@@ -32,16 +34,18 @@ class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(left: 24, right: 24, top: 60, bottom: 30),
-        child: Column(
-            children :[
-              _webView(),
-              _padding(30),
-              _isPublic(true),
-              _padding(30),
-              _title(),
-            ]
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(left: 24, right: 24, top: 60, bottom: 30),
+          child: Column(
+              children :[
+                _webView(),
+                _padding(30),
+                _isPublic(true),
+                _padding(30),
+                _title(),
+              ]
+          ),
         ),
       ),
     );
@@ -82,13 +86,12 @@ class _DetailState extends State<Detail> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "공개여부",
+          "제목",
           style: TextStyle(
               fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
         ),
-        TextField(
-
-        )
+        _padding(5),
+        IDormTextField(borderRadius: 10),
       ],
     );
   }
