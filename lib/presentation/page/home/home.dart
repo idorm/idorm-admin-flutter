@@ -5,6 +5,8 @@ import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/page/home/home_controller.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../Detail/detail.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -28,52 +30,55 @@ class _HomeState extends State<Home> {
         body: ListView.builder(
             itemCount: 10,
             itemBuilder: (BuildContext context, int index){
-              return _NoticeList();
+              return _noticeList();
             }),
       ),
     );
   }
 
-  Widget _NoticeList(){
-    return Padding(
-      padding: const EdgeInsets.only(top: 22, bottom: 14, right: 24, left: 24),
-      child: Container(
-        padding: const EdgeInsets.only(top: 24, bottom: 22, right: 22, left: 22),
-        height: 160,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: IDormColors.gray2, width: 1),
-            color: IDormColors.white
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "공지 사항 제목",
-              style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 14, color: IDormColors.black),
-            ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
-            const Text(
-              "6월 18일",
-              style: TextStyle(
+  Widget _noticeList(){
+    return GestureDetector(
+      onTap: () => Get.to(const Detail()),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 22, bottom: 14, right: 24, left: 24),
+        child: Container(
+          padding: const EdgeInsets.only(top: 24, bottom: 22, right: 22, left: 22),
+          height: 160,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: IDormColors.gray2, width: 1),
+              color: IDormColors.white
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "공지 사항 제목",
+                style: TextStyle(
                   fontWeight: FontWeight.w400, fontSize: 14, color: IDormColors.black),
-            ),
-            const Padding(padding: EdgeInsets.only(top: 20)),
-            const Text(
-              "일정이 있는 기숙사",
-              style: TextStyle(
-                  fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray3),
-            ),
-            _Dorm(true, true, true)
-          ],
+              ),
+              const Padding(padding: EdgeInsets.only(top: 5)),
+              const Text(
+                "6월 18일",
+                style: TextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 14, color: IDormColors.black),
+              ),
+              const Padding(padding: EdgeInsets.only(top: 20)),
+              const Text(
+                "일정이 있는 기숙사",
+                style: TextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 12, color: IDormColors.gray3),
+              ),
+              _dorm(true, true, true)
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _Dorm(bool dorm1, bool dorm2, bool dorm3){
+  Widget _dorm(bool dorm1, bool dorm2, bool dorm3){
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children : [
