@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
             onTap: () => {
               //요기도 클릭하면 토글하게 해주기
             },
-            child: Text(
+            child: const Text(
               "공개하지 않은 공지만 확인하기",
               style: TextStyle(
                   fontWeight: FontWeight.w500,
