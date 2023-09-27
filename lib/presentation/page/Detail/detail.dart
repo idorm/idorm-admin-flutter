@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
@@ -44,6 +45,8 @@ class _DetailState extends State<Detail> {
                 _isPublic(true),
                 _padding(30),
                 _title(),
+                _padding(30),
+                _period(),
               ]
           ),
         ),
@@ -92,6 +95,22 @@ class _DetailState extends State<Detail> {
         ),
         _padding(5),
         IDormTextField(borderRadius: 10),
+      ],
+    );
+  }
+
+  Widget _period(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "기간 ",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
+        ),
+        _padding(5),
+        IDormTextField(borderRadius: 10, ),
       ],
     );
   }
