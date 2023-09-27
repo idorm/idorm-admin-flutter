@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/page/home/home_controller.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
 import '../Detail/detail.dart';
 
 
@@ -37,10 +35,10 @@ class _HomeState extends State<Home> {
   }
 
   Widget _noticeList(){
-    return GestureDetector(
-      onTap: () => Get.to(const Detail()),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 22, bottom: 14, right: 24, left: 24),
+    return Padding(
+      padding: const EdgeInsets.only(top: 22, bottom: 14, right: 24, left: 24),
+      child: GestureDetector(
+        onTap: () => Get.to(Detail()),
         child: Container(
           padding: const EdgeInsets.only(top: 24, bottom: 22, right: 22, left: 22),
           height: 160,
