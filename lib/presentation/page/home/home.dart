@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:idorm_admin_flutter/presentation/common/colors.dart';
 import 'package:idorm_admin_flutter/presentation/page/home/home_controller.dart';
+import '../../component/idormCheckBox.dart';
 import '../../component/toggleBtn.dart';
 import '../Detail/detail.dart';
 
@@ -16,7 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   HomeController homeController = Get.find();
 
-  final bool _isPublicChecked = false;
+  bool isPublicChecked = false;
 
   @override
   void initState() {
@@ -50,14 +51,24 @@ class _HomeState extends State<Home> {
 
       child: Row(
         children: [
-          const Text(
-            "공개하지 않은 공지만 확인하기",
-            style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 14,
-                color: IDormColors.gray4),
-          ),
-          ToggleBtn(isPublicChecked: _isPublicChecked, action: () => {})
+          IDormCheckBox(size: 20, value: isPublicChecked, onChanged: (checked) {
+            setState(() {
+              isPublicChecked = checked;
+            });
+          }),
+          const SizedBox(width: 10, height: 30,),
+          GestureDetector(
+            onTap: () => {
+              //요기도 클릭하면 토글하게 해주기
+            },
+            child: Text(
+              "공개하지 않은 공지만 확인하기",
+              style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: IDormColors.gray4),
+            ),
+          )
         ],
       ),
     );
