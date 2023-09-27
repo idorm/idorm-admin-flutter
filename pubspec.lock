@@ -204,7 +204,7 @@ packages:
       name: logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "2.0.2+1"
   matcher:
     dependency: transitive
     description:
