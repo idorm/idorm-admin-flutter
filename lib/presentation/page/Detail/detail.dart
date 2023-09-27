@@ -110,7 +110,14 @@ class _DetailState extends State<Detail> {
               fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
         ),
         _padding(5),
-        IDormTextField(borderRadius: 10, ),
+        IDormTextField(borderRadius: 10, suffixIcon:  GestureDetector(
+          onTap: null,
+          child: SvgPicture.asset(
+            "assets/calendar.svg",
+            color: IDormColors.primary,
+            fit: BoxFit.scaleDown,
+          ),
+        ),),
       ],
     );
   }
