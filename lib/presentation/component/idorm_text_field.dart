@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/colors.dart';
+import '../common/colors.dart';
 
 //Todo : SrTextFiled) 본문 행간=글자크기 *1.4 ,글자크기:12, 행간:16.8, 본문 영역: 68*296, 상하 여백: 14, 좌우 여백: 16
 
