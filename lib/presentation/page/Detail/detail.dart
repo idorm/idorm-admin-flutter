@@ -137,6 +137,22 @@ class _DetailState extends State<Detail> {
   }
 
   Widget _dorms(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "기숙사",
+          style: TextStyle(
+              fontWeight: FontWeight.w500, fontSize: 16, color: IDormColors.black),
+        ),
+        _padding(15),
+        _dormCheckBox()
+      ],
+    );
+  }
+
+  Widget _dormCheckBox(){
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
