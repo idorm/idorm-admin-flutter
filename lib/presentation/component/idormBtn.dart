@@ -27,9 +27,9 @@ class IDormBtn extends StatelessWidget {
           if(isEnabled) action();
         },
 
-        color: mode == Mode.register ? IDormColors.primary : IDormColors.gray3,
-        splashColor: mode == Mode.register ? IDormColors.primary : IDormColors.gray3,
-        highlightColor: mode == Mode.register ? IDormColors.primary : IDormColors.gray3,
+        color: mode == Mode.register ? IDormColors.primary : IDormColors.gray1,
+        splashColor: mode == Mode.register ? IDormColors.primary : IDormColors.gray1,
+        highlightColor: mode == Mode.register ? IDormColors.primary : IDormColors.gray1,
         child:Text(
           mode == Mode.register ? "등록" : "수정",
           style: mode == Mode.register ? const TextStyle(color: IDormColors.white, fontWeight: FontWeight.w500, fontSize: 16) : const TextStyle(color: IDormColors.gray4, fontWeight: FontWeight.w500, fontSize: 16),
